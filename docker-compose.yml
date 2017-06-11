@@ -1,0 +1,34 @@
+version: '2'
+services:
+  lk-server:
+    build: .
+    container_name: lk-server
+    volumes:
+      - ./:/app
+    links:
+      - lk-mongo
+    ports:
+      - 8000:8000
+      - 3000:3000
+      - 22:22
+    networks:
+      - lk-network
+
+  lk-mongo:
+    image: mongo:latest
+    container_name: lk-mongo
+    volumes:
+      - lk-mongo-volume:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - lk-network
+
+volumes:
+  lk-mongo-volume:
+    driver: local
+
+networks:
+  lk-network:
+    driver: bridge
+    

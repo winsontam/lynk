@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-danger" role="alert" ng-show="$ctrl.error">{{$ctrl.error}}</div>
+            <h3>Dashboard</h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h5>New Projects</h5>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                            <tr ng-repeat="project in $ctrl.newProjects track by project._id">
+                                <td>{{project.title}}</td>
+                                <td>{{project.status}}</td>
+                                <td><a ui-sref="project({id: project._id})">View</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-12">
+                        <h5>Finished Projects</h5>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                            <tr ng-repeat="project in $ctrl.finishedProjects track by project._id">
+                                <td>{{project.title}}</td>
+                                <td>{{project.status}}</td>
+                                <td><a ui-sref="project({id: project._id})">View</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-12">
+                        <h5>Expired Projects</h5>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                            <tr ng-repeat="project in $ctrl.expiredProjects track by project._id">
+                                <td>{{project.title}}</td>
+                                <td>{{project.status}}</td>
+                                <td><a ui-sref="project({id: project._id})">View</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

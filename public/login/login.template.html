@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="alert alert-danger" role="alert" ng-show="$ctrl.error">{{$ctrl.error}}</div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Login</h3>
+                    <form novalidate ng-submit="$ctrl.login();">
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="Email" ng-model="$ctrl.form.email"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password"
+                                   ng-model="$ctrl.form.password"/>
+                        </div>
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </form>
+                    <br/>
+                    <a ui-sref="signup">Not a member?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

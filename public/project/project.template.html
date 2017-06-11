@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger" role="alert" ng-show="$ctrl.error">{{$ctrl.error}}</div>
+            <div class="panel panel-default" ng-show="$ctrl.project">
+                <div class="panel-body">
+                    <h3>Project</h3>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Title</th>
+                            <td>
+                                <div ng-show="$ctrl.editing !== 'title'">
+                                    {{$ctrl.project.title}}
+                                    <a href="javascript:;"
+                                       ng-show="$ctrl.project.owner"
+                                       ng-click="$ctrl.editing = 'title'">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                </div>
+                                <div ng-show="$ctrl.editing === 'title'">
+                                    <form novalidate ng-submit="$ctrl.editTitle();">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-model="$ctrl.title"/>
+                                            <div class="input-group-btn">
+                                                <button
+                                                        type="submit"
+                                                        class="btn btn-default">Edit</button>
+                                                <button
+                                                        type="button"
+                                                        class="btn btn-default"
+                                                        ng-click="$ctrl.editing = false">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>
+                                <div ng-show="$ctrl.editing !== 'status'">
+                                    {{$ctrl.project.status}}
+                                    <a href="javascript:;"
+                                       ng-show="$ctrl.project.owner"
+                                       ng-click="$ctrl.editing = 'status'">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                </div>
+                                <div ng-show="$ctrl.editing === 'status'">
+                                    <div class="btn-group" role="group">
+                                        <button
+                                                type="button"
+                                                class="btn btn-default"
+                                                ng-disabled="$ctrl.project.status == 'expired'"
+                                                ng-click="$ctrl.markStatusAsFinish();">Mark as Finished</button>
+                                        <button
+                                                type="button"
+                                                class="btn btn-default"
+                                                ng-click="$ctrl.editing = false">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

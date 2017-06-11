@@ -1,0 +1,20 @@
+<nav class="app-navbar">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 text-left">
+                <div class="app-logo">
+                    <img src="https://whub-assets.s3.amazonaws.com/uploads/logo/file/564c2e02ffe57e0003000409/LYNK-RGB_Logo-FA-Colour-02.png"/>
+                </div>
+            </div>
+            <div class="col-xs-6 text-right">
+                <span ng-show="$root.user">
+                <a ui-sref="dashboard">Dashboard</a> |
+                <a href="javascript:;" ng-click="$ctrl.logout();">Logout ({{$root.user.email}})</a>
+                </span>
+                <a ui-sref="login" ng-hide="$root.user">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="app-section" ui-view></div>
