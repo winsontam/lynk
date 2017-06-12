@@ -26,6 +26,11 @@ npm run start
 # App Location
 http://localhost:8000/
 
+| Name | Value  |
+| ------ | ------ |
+| email | lynk@lynk.global |
+| password | lynk1234 |
+
 # API Endpoints
 ##### Question 1: Project Coding
 POST http://localhost:3000/auth/signup
